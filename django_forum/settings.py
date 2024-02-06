@@ -29,7 +29,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 CORS_ORIGIN_ALLOW_ALL = True
-CSRF_TRUESTED_ORIGINS = ['http://127.0.0.1:8001', 'https://twitter-clone-sbpl.onrender.com']
+CSRF_TRUESTED_ORIGINS = ['http://127.0.0.1:8001', 'https://twitter-clone-sbpl.onrender.com' ]
 
 
 # Application definition
