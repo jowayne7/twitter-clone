@@ -1,0 +1,139 @@
+/*
+common
+******************/
+
+html,
+body {
+    height: 100%;
+}
+
+.content {
+    max-width: 600px;
+    height: 100%;
+    margin: 0 auto;
+    border-left: 1px solid #ccc;
+    border-right: 1px solid #ccc;
+}
+
+/*
+post 
+**************/
+
+.posts li {
+    display: flex;
+    border-bottom: 1px solid #ccc;
+    padding: 20px 40px;
+    list-style: none;
+    position: relative;
+}
+
+.posts li .menu_icon {
+    width: 20px;
+}
+
+.posts li .logo {
+    flex-basis: 15%;
+}
+
+.logo img {
+    width: 50%;
+    padding: 0px;
+}
+
+.posts li .name_body {
+    flex-basis: 85%;
+}
+
+.posts li .name_body .name {
+    font-weight: bold;
+}
+
+.posts li .name_body .datetime {
+    color: gray;
+}
+.posts ul{
+    padding: 0;
+}
+@media screen and (max-width: 500px) {
+    .posts li .name_body .name{
+        font-size: 20px;
+    }
+
+}
+
+/* form */
+
+.post_form{
+    padding: 20px 40px;
+    border-bottom: 1px solid #ccc;
+    border-top: 1px solid #ccc;
+}
+.inputs{
+    position: relative;
+    left: 50px;
+}
+.inputs input{
+    width: 70%;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+}
+.inputs textarea{
+    width: 70%;
+    border: 1px solid #ccc;
+    resize: none;
+
+}
+.inputs .submit{
+    width: 70%;
+}
+.deflogo img{
+    width: 30px;
+    height: 30px;
+    position: relative;
+    top: 30px;
+}
+img.menu_icon{
+    width: 5%;
+    height: 5%;
+   
+}
+
+.menu a {
+    position: relative;
+    top: 20px;
+    text-decoration: none;
+    font-size: 13px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    padding: 10px;
+    border-color: white;
+}
+.menu{
+    display: none;
+    position: absolute;
+    top: 40px;
+    right: 15px;
+}
+.like{
+    display: flex;
+}
+.like p{
+    padding: 0 10px;
+    position: relative;
+    bottom: 13px;
+    font-size: 16px;
+}
+
+body{
+    background-color:gold;
+}
+.weblogo{
+    width: 50px;
+    height: 50px;
+    padding:15px 20px 0 0;
+}
+.header{
+    display: flex;
+    justify-content: center;
+    
+}

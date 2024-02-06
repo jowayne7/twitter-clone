@@ -1,0 +1,54 @@
+{% extends 'base.html' %} {% block content %}{% load static %}
+{% load static %}
+<section class="content">
+  <section class="post_form">
+    <form class="form" action="/" method="POST" enctype="multipart/form-data">
+      {% csrf_token %} 
+      <div class="deflogo">
+        <img src="{% static 'image/user.png' %}" alt="" />
+      </div>
+      <div class="inputs">
+        <input type="text" name="name" placeholder="Name" />
+        <textarea name="body" id="" placeholder="Tell us something!"></textarea>
+        <input type="file" name="image"/>
+        <input type="submit" value="Post" class="submit"/>
+      </div>
+    </form>
+  </section>
+
+  <section class="posts">
+    <ul>
+      {% for post in posts %}
+      <li>
+    
+        <div class="logo">
+          <img src="{% static 'image/user.png' %}" alt="" />
+        </div>
+        <div class="name_body">
+          <div class="name">{{post.name}}</div>
+          <div class="datetime">{{post.created_at}}</div>
+          <p>{{post.body}}</p>
+          {% if post.image.url %}
+          <img src="{{post.image.url}}" alt="" width="300px">
+          {% endif %}
+          <div class="like">
+            <form action="{% url 'like_post' post.pk %}" method="POST">
+            {% csrf_token %}
+             <button type="submit" name="'post_id" value="">&#10084</button>
+            </form>
+            <p>{{ post.likes }}</p>
+          </div>
+        </div>
+        <img class="menu_icon js-menu-icon" src="{% static 'image/menu.png' %}" /> 
+        <div class="menu">
+          <a href="/delete/{{post.id}}/">Delete</a>
+          <a href="/edit/{{post.id}}/">Edit</a>
+        </div>
+      </li>
+      {% endfor %}
+    </ul>
+  </section>
+  <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+  <script src="{% static 'post.js' %}"></script>
+</section>
+{% endblock %}
